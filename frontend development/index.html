@@ -6,9 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CraveDigi Advisors</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap');
+
+        * {
+            font-family: 'Fredoka';
+            font-weight: 400;
+        }
+
         body {
-            margin-inline: 50px;
+            margin-inline: 70px;
             background-color: white;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #branding img{
+            height: 60px;
+        }
+
+        header nav ul {
+            display: flex;
+            flex-direction: row;
+        }
+        header nav ul a {
+            text-decoration:none;
+        }
+        header nav ul li {
+            list-style-type: none;
+            margin: 20px;
+            font-weight: 500;
+            color: black;
+        }
+
+        #header-btn button {
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 20px;
+            background-color: white;
+            
+        }
+
+        nav .active {
+            color: rgb(0, 115, 255);
+        }
+
+        header nav ul li:hover {
+            color: rgb(46, 140, 255);
+        }
+        #header-btn button:hover {
+            border: 2px solid red;
+            background-color: red;
+            color: white;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        #site-banner h1,#site-banner h1 span {
+            
+            font-size:8vw;
+            font-weight:700;
+            margin-bottom: 0;
+        }
+        #site-banner {
+            position: relative;
+        }
+
+        #site-banner img {
+            position: absolute;
+        }
+        #site-banner img:nth-child(1) {
+            height:2vw;
+            top: -10px;
+            transform: translateX(-200px);
+        }
+        #site-banner h3 {
+            margin-inline: 20%;
+            font-size: 1.7vw;
         }
     </style>
 </head>
@@ -19,10 +100,10 @@
         </div>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Services</li>
-                <li>Pricing</li>
+                <a href="index.html"><li class="active">Home</li></a>
+                <a href="about.html"><li>About us</li></a>
+                <a href="services.html"><li>Services</li></a>
+                <a href="pricing.html"><li>Pricing</li></a>
             </ul>
         </nav>
         <div id="header-btn">
@@ -31,14 +112,14 @@
     </header>
     <main>
         <section id="site-banner">
-            <h1>Crafting Engaging<br>Social Content</h1>
+            <h1>Crafting <span style="color:#fea31b">Engaging</span><br><span style="color:#fe3b6a">Social</span> Content</h1>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</h3>
             <div id="cliparts">
                 <img src="./assets/images/cliparts/1.png" />
-                <img src="./assets/images/cliparts/1.png" />
-                <img src="./assets/images/cliparts/1.png" />
-                <img src="./assets/images/cliparts/1.png" />
-                <img src="./assets/images/cliparts/1.png" />
+                <img src="./assets/images/cliparts/2.png" />
+                <img src="./assets/images/cliparts/3.png" />
+                <img src="./assets/images/cliparts/4.png" />
+                <img src="./assets/images/cliparts/5.png" />
             </div>
         </section>
         <section id="clients">
