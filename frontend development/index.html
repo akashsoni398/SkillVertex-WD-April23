@@ -69,8 +69,7 @@
             text-align: center;
         }
 
-        #site-banner h1,#site-banner h1 span {
-            
+        #site-banner h1,#site-banner h1 span { 
             font-size:8vw;
             font-weight:700;
             margin-bottom: 0;
@@ -78,18 +77,85 @@
         #site-banner {
             position: relative;
         }
-
-        #site-banner img {
-            position: absolute;
+        #site-banner h1 {
+            position: relative;
+            z-index: 1;
         }
-        #site-banner img:nth-child(1) {
-            height:2vw;
-            top: -10px;
-            transform: translateX(-200px);
+
+        #site-banner img[src="./assets/images/cliparts/1.png"] {
+            position: absolute;
+            height: 2vw;
+            transform: translateY(-0.7vw);
+        }
+        #site-banner img[src="./assets/images/cliparts/2.png"] {
+            position: absolute;
+            height: 8.9vw;
+            z-index: -1;
+            transform: translate(-23.5vw,0.7vw);
+        }
+        #site-banner img[src="./assets/images/cliparts/5.png"] {
+            position: absolute;
+            height: 8vw;
+            transform: translate(-40px,15px);
         }
         #site-banner h3 {
             margin-inline: 20%;
             font-size: 1.7vw;
+        }
+
+        #clients {
+            position: relative;
+            margin:50px 0;
+        }
+        #client-jumbotron {
+            width: 90%;
+            height: 30vw;
+            object-fit: cover;
+            border-radius: 3vw;
+        }
+        #clients h4 {
+            font-size:1.4vw;
+            font-weight:700;
+        }
+        #clients #slider {
+            display: flex;
+            width: 100%;
+        }
+        #clients #slider div{
+            width: 25%;
+        }
+        #clients #slider img {
+            width: 80%;
+        }
+        #about-us-container {
+            position: relative;
+        }
+        .left-col-50 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+        }
+        .right-col-50 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+        }
+        #about-us img[src="./assets/images/misc-1.jpg"] {
+
+        }
+        #about-us img[src="./assets/images/misc-2.png"] {
+
+        }
+        #about-us img[src="./assets/images/misc-3.png"] {
+
+        }
+        #about-us img[src="./assets/images/misc-4.png"] {
+
+        }
+        #about-us img[src="./assets/images/misc-5.png"] {
+
         }
     </style>
 </head>
@@ -110,75 +176,53 @@
             <a href="./index.html#contact-us"><button type="button">Contact Us</button></a>
         </div>
     </header>
+
     <main>
         <section id="site-banner">
-            <h1>Crafting <span style="color:#fea31b">Engaging</span><br><span style="color:#fe3b6a">Social</span> Content</h1>
+            <h1>Craft<img src="./assets/images/cliparts/1.png" />ing <span style="color:#fea31b">Engaging</span><br><span style="color:#fe3b6a">Social</span><img src="./assets/images/cliparts/2.png" /> C<img src="./assets/images/cliparts/5.png" />ontent</h1>
             <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</h3>
             <div id="cliparts">
-                <img src="./assets/images/cliparts/1.png" />
-                <img src="./assets/images/cliparts/2.png" />
                 <img src="./assets/images/cliparts/3.png" />
                 <img src="./assets/images/cliparts/4.png" />
-                <img src="./assets/images/cliparts/5.png" />
             </div>
         </section>
         <section id="clients">
+            <img id="client-jumbotron" src="./assets/images/client-jumbotron-img.jpg">
             <h4>Work with all sizes of companies and industry</h4>
             <div id="slider">
                 <div>
-                    <img data-u="image" src="img/001.jpg" />
+                    <img data-u="image" src="./assets/images/client-logo-1.png" />
                 </div>
                 <div>
-                    <img data-u="image" src="img/005.jpg" />
+                    <img data-u="image" src="./assets/images/client-logo-1.png" />
                 </div>
                 <div>
-                    <img data-u="image" src="img/006.jpg" />
+                    <img data-u="image" src="./assets/images/client-logo-1.png" />
                 </div>
                 <div>
-                    <img data-u="image" src="img/007.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/008.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/009.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/010.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/011.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/024.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/025.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/026.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="img/027.jpg" />
-                </div>
+                    <img data-u="image" src="./assets/images/client-logo-1.png" />
+                </div>  
             </div>
         </section>
 
         <section id="about-us">
-            <aside class="left-col">
-                <img />
-                <img />
-                <img />
-                <img />
-            </aside>
-            <aside class="right-col">
-                <h2>Empowering Your Social Strategy</h2>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</h5>
-                <div id="Accordion">
-                    <h4></h4>
-                    <h5></h5>
-                </div>
-            </aside>
+            <div id="about-us-container">
+                <aside class="left-col-50">
+                    <img src="./assets/images/misc-1.jpg"/>
+                    <img src="./assets/images/misc-2.png"/>
+                    <img src="./assets/images/misc-3.png"/>
+                    <img src="./assets/images/misc-4.png"/>
+                    <img src="./assets/images/misc-5.png"/>
+                </aside>
+                <aside class="right-col-50">
+                    <h2>Empowering Your Social Strategy</h2>
+                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</h5>
+                    <div id="Accordion">
+                        <h4></h4>
+                        <h5></h5>
+                    </div>
+                </aside>
+            </div>
         </section>
 
         <section id="services"></section>
@@ -187,7 +231,7 @@
         <section id="socials"></section>
         <section id="pricing"></section>
     </main>
-    <footer height="2000">
+    <footer>
         <section id="contact-us"></section>
         <div id="footer-1">
             <div id="branding">
