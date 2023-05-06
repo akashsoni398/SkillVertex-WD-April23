@@ -7,19 +7,24 @@ if(isset($_POST['submit'])) {
     $pwd = mysqli_real_escape_string($conn,$_POST['pwd']);
 
     if($email!="" && $pwd!="") {
-        $sql_query = "SELECT count(*) AS usercount FROM users WHERE email='$email' AND password='$pwd';";
+        $sql_query = "SELECT count(*) AS usercount FROM users WHERE email='$email';";
         $result = mysqli_query($conn,$sql_query);
         $row = mysqli_fetch_array($result);
         if($row['usercount']==1) {
-            $sql_query = "SELECT name AS username,email As useremail,id AS userid FROM users WHERE email='$email' AND password='$pwd';";
+            $sql_query = "SELECT name AS username,email As useremail,id AS userid,password AS hashpwd FROM users WHERE email='$email';";
             $result = mysqli_query($conn,$sql_query);
             $row = mysqli_fetch_array($result);
-            $_SESSION['userid'] = $row['userid'];
-            $_SESSION['username'] = $row['username'];
-            $_SESSION['useremail'] = $row['useremail'];
-            header("location:./../index.php");
+            if(password_verify($pwd,$row['hashpwd'])) {
+              $_SESSION['userid'] = $row['userid'];
+              $_SESSION['username'] = $row['username'];
+              $_SESSION['useremail'] = $row['useremail'];
+              header("location:./../index.php");
+            }
+            else {
+              $errmsg = "Username and password did not match";
+            }
         }
-        else if($rows['usercount']==0) {
+        else if($row['usercount']==0) {
             $errmsg = "Username and password did not match";
         }
         else {

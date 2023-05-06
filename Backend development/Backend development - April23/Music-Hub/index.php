@@ -1,6 +1,6 @@
 <?php 
 
-session_start(); 
+include './dbconfig.php';
 
 if(isset($_GET['logout'])) {
     session_destroy();
@@ -226,7 +226,42 @@ if(isset($_GET['logout'])) {
         </ul>
     </nav>
 
-    <main></main>
+    <main>
+        <div class="row m-5 row-cols-1 row-cols-md-3 g-5">
+            
+            <?php 
+                $sql_query = "SELECT * FROM music ORDER BY name";
+                $result = mysqli_query($conn,$sql_query);
+                while($rows = mysqli_fetch_array($result)) {
+            ?>
+        
+            <div class="col">
+                <div class="card h-100">
+                <img src="./assets/musicimg/<?php echo $rows['image'] ?>" class="card-img-top" alt="...">
+                <audio controls>
+                    <source src="./assets/music/<?php echo $rows['link'] ?>" /> 
+                </audio>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $rows['name'] ?> </h5>
+                    <p class="card-text">
+                    album: <?php echo $rows['album'] ?><br>
+                    singer: <?php echo $rows['singer'] ?>	<br>
+                    composer: <?php echo $rows['composer'] ?>	<br>
+                    songwriter: <?php echo $rows['songwriter'] ?><br>
+                    label: <?php echo $rows['label'] ?><br>
+                    starring: <?php echo $rows['starring'] ?>	
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Views: <?php echo $rows['views'] ?></small>
+                </div>
+                </div>
+            </div>
+            
+            <?php } ?>
+            
+        </div>
+    </main>
 
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

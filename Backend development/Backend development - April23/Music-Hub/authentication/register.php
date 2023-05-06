@@ -15,7 +15,8 @@ if(isset($_POST['submit'])) {
             $result = mysqli_query($conn,$sql_query);
             $row = mysqli_fetch_array($result);
             if($row['usercount']==0) {
-                $sql_query = "INSERT INTO users(name,email,password) VALUES ('$name','$email','$pwd');";
+                $hashpwd = password_hash($pwd,PASSWORD_BCRYPT);
+                $sql_query = "INSERT INTO users(name,email,password) VALUES ('$name','$email','$hashpwd');";
                 $result = mysqli_query($conn,$sql_query);
                 if($result) {
                     header("Location:login.php");
